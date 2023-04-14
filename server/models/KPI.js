@@ -1,7 +1,7 @@
 import { Timestamp } from "mongodb";
 import mongoose from "mongoose";
 import { loadType } from "mongoose-currency"
-import router from "../routes/kpi";
+import router from "../routes/kpi.js";
 
 const Schema = mongoose.Schema
 loadType(mongoose)
@@ -68,7 +68,7 @@ const KPISchema = new Schema(
             get: (v) => v/100
         },
         expensesByCategory:{
-            type: map,
+            type: Map,
             of: {
                 type: mongoose.Types.Currency,
                 Currency: "USD",
@@ -78,7 +78,7 @@ const KPISchema = new Schema(
         monthlyData: [monthSchema],
         dailyData: [daySchema]
     },
-    {Timestamp: ture,toJSON: { getters: ture }}
+    {Timestamp: true,toJSON: { getters: true }}
 )
 
 const KPI = mongoose.model("KPI", KPISchema)

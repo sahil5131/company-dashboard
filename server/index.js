@@ -6,6 +6,8 @@ import helmet from "helmet"
 import morgan from "morgan"
 import mongoose from "mongoose"
 import kpiRoutes from "./routes/kpi.js"
+import KPI from "./models/KPI.js"
+import { kpis } from "./data/data.js"
 
 dotenv.config()
 
@@ -27,7 +29,9 @@ mongoose.connect(process.env.MONGOCOMPASS_URL,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(async()=>{
-    app.listen(PORT, ()=>{
-        console.log(`server port: ${PORT}`)
-    })
+    app.listen(PORT, ()=>console.log(`server port: ${PORT}`))
+    
+    // add data one time 
+    // await mongoose.connection.db.dropDatabase()
+    // KPI.insertMany(kpis)
 }).catch((error)=>console.log(`${error} did not connect`))
