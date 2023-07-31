@@ -20,9 +20,11 @@
     "mongodb": "^5.2.0",
     "mongoose": "^7.0.3",
     "mongoose-currency": "^0.2.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "regression": "^2.0.1"
   },
   "devDependencies": {
+    "@types/regression": "^2.0.2",
     "nodemon": "^2.0.22"
   }
 }

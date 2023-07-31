@@ -27,19 +27,19 @@ const Navbar = (props: Props) => {
                         textDecoration: "inherit"
                     }}
                     >
-                    dashboard
+                    Dashboard
                     </Link>
                 </Box>
                 <Box sx={{"&:hover": {color: palette.primary[100]}}}>
                     <Link 
-                    to="/" 
+                    to="/predictions" 
                     onClick={()=>setSelected("predictions")}
                     style={{
                         color: slected === "predictions" ? "inherit" : palette.grey[700],
                         textDecoration: "inherit"
                     }}
                     >
-                    predictions
+                    Predictions
                     </Link>
                 </Box>
             </FlexBetween>
